@@ -9,3 +9,7 @@ ruby(3.0.1) on Rails(6.1.3.2) with PostgreSQL 10.18.
 UI is BS 5 with font-awesome
 
 Use Devise for auth
+
+Allow social media logins from: GitHub, Google
+Use json role
+

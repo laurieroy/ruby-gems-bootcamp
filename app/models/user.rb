@@ -27,6 +27,10 @@ class User < ApplicationRecord
     user
   end
   
+  after_create do
+    self.update(student: true)
+  end
+  
   def to_s
     email
   end

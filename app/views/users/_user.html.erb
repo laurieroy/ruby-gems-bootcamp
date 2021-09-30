@@ -39,5 +39,9 @@
 <b><%= 'uid'.humanize %>: </b>
 <%=  user.uid %>
 <br>
+<b><%= 'roles'.humanize %>: </b>
+<%=  user.active_roles.join(",") %>
+<br>
+<%= link_to "Edit roles", edit_user_path(user), class: "text-warning"  %>
 <%= link_to ban_stauts(user), ban_user_path(user), method: :patch, class: "text-warning"  %>
 <%= link_to "Delete", user, method: :delete, data: {confirm: "Are you sure?"}, class: "text-danger"  %>

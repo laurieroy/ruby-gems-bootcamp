@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :lockable, :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2, :github]
-         
+    
+  include Roleable
+       
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
@@ -23,5 +25,9 @@ class User < ApplicationRecord
     
     user.confirmed_at = Time.now
     user
+  end
+  
+  def to_s
+    email
   end
 end

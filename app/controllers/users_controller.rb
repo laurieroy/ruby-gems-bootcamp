@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_action :require_admin, only: %i[edit update ban destroy]
+  
   def index
     @users = User.all.order(created_at: :asc)
   end
@@ -37,6 +40,12 @@ class UsersController < ApplicationController
     redirect_to @user, notice: "User access locked: #{@user.access_locked?}"
   end
   private
+  
+  def require_admin
+    unless current_user.admin?
+      redirect_to root_path, alert: "You are not authorized to perform this action"
+    end
+  end
   
   def user_params
     params.require(:user).permit(*User::ROLES)

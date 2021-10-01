@@ -3,3 +3,19 @@ All Users(<%= @users.size %>):
 <br />
   <%= render 'users/user', user: user %>
 <% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

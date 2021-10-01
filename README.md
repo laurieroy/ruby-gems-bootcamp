@@ -11,8 +11,7 @@ UI is BS 5 with font-awesome
 Use Devise for auth
 
 Allow social media logins from: GitHub, Google
-<<<<<<< HEAD
+
 Use json role
-=======
->>>>>>> Add ROLES to user
+
 

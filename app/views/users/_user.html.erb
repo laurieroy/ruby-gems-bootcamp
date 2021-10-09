@@ -5,7 +5,7 @@
 <%= user.email %>
 <br >
 <strong>Confirmed:</strong>
-<%= user.confirmed? %>
+<%= boolean_label( user.confirmed? )  %>
 <br />
 <strong><%= 'sign_in_count'.humanize %>: </strong>
 <%= user.sign_in_count %>
